@@ -38,13 +38,44 @@
         .mole.show {
             bottom: 10px;
         }
+        
+        /* Button container to align buttons side by side */
+        .button-container {
+            margin-top: 10px;
+        }
+        
+        .button-container button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .button2 {
+            background-color: green;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .button {
+            background-color: red;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <h1>Whack-a-Mole</h1>
     <p>Score: <span id="score">0</span></p>
     <p>Time Left: <span id="time-left">30</span>s</p>
-    <button onclick="startGame()">Start Game</button>
+    
+    <!-- Button container to keep buttons aligned -->
+    <div class="button-container">
+        <button onclick="startGame()" class="button2">Start Game</button>
+        <button onclick="GoBACK()" class="button">Back to the app</button>
+    </div>
+
     <div class="game-container" id="game-board"></div>
     
     <script>
@@ -96,7 +127,12 @@
                     document.getElementById("time-left").textContent = timeLeft;
                     randomMole();
                 }
-            }, 1000);
+            }, 2000);
+        }
+
+        function GoBACK() {
+            // This sends a message to MIT App Inventor to navigate back
+            window.AppInventor.setWebViewString("GoBack");
         }
     </script>
 </body>
