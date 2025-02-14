@@ -59,10 +59,6 @@
             margin-right: 10px;
         }
 
-        .button {
-            background-color: red;
-            color: white;
-        }
     </style>
 </head>
 <body>
@@ -73,8 +69,7 @@
     <!-- Button container to keep buttons aligned -->
     <div class="button-container">
         <button onclick="startGame()" class="button2">Start Game</button>
-        <button onclick="GoBACK()" class="button">Back to the app</button>
-    </div>
+        
 
     <div class="game-container" id="game-board"></div>
     
@@ -130,10 +125,7 @@
             }, 2000);
         }
 
-        function GoBACK() {
-            // This sends a message to MIT App Inventor to navigate back
-            window.AppInventor.setWebViewString("GoBack");
-        }
+     
     </script>
 </body>
 </html>
